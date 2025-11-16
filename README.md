@@ -100,4 +100,40 @@ A subtype of an Actor
                 if (m.getTo() != null) m.getTo().tell(new Message(newID, incrementedVal, null)); 
             }
         }
+
+## ActorCreateActor
+A subtype of an Actor
+ - Takes a message with a non-null and non-negative integer value and creates at random either NumericIncrementActor(s) or StringIdSwitchActor(s).
+ - Overrides the onMessage() function
+
+### Fields
+
+         private final Random rand = new Random();
+        List<Actor> actors = new ArrayList<>();
+
+### Functions
+
+         @Override protected void onMessage(Message m) {
+            Integer intVal = m.getIntValue();
+            if ("inc".equals(m.getID()) && intVal != null) {
+                int incrementedVal = intVal + 1;              
+                String newID = "postInc";
+                if (m.getTo() != null) m.getTo().tell(new Message(newID, incrementedVal, null)); 
+            }
+        }
+
+## StringIdSwitchActor
+A subtype of an Actor
+ - Takes a message with a string value and swaps the message ID with the string value.
+ - Overrides the onMessage() function
+
+### Functions
+
+        @Override protected void onMessage(Message m) {
+            if ("swap".equals(m.getID()) && m.getStrValue() != null) {
+                String newName = m.getStrValue();
+                String newVal  = m.getID();
+                if (m.getTo() != null) m.getTo().tell(new Message(newName, newVal, null));
+            }
+        }
  

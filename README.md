@@ -156,9 +156,41 @@ A subtype of an Actor
 # Message.java
 
 Contains the structure of a message sent between actors.
- - A message is constructed with string ID paired with either:
-   - An integer value
-   - A string value
-   - An Object along with a reference to another actor 
+ - A message is constructed with a string ID paired with either:
+   - An integer value.
+   - A string value.
+   - An Object along with a reference to another actor in which the message itself will be sent to.
+
+### Fields
+
+    private final String ID;
+    private final Integer intValue;
+    private final String strValue;
+    private final ActorReference to;
+
+### Functions
+
+    public String getID() {
+        return ID;
+    }
+    public Integer getIntValue() {
+        return intValue;
+    }   
+    public String getStrValue() {
+        return strValue;
+    }   
+    public ActorReference getTo() {
+        return to;
+    }
+
+
+# ActoreReference.java (interface)
+A simple file that contains a single method. This allows actors to send messages to each other regardless of subtype
+
+### Functions
+
+ public interface ActorReference {
+    void tell(Message message);
+}
  
 

@@ -189,8 +189,8 @@ A simple file that contains a single method. This allows actors to send messages
 
 ### Functions
 
- public interface ActorReference {
-    void tell(Message message);
-}
+  public interface ActorReference {
+     void tell(Message message);
+ }
  
 

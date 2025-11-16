@@ -153,7 +153,7 @@ A subtype of an Actor
             }
         }
 
-# Message.java
+## Message.java
 
 Contains the structure of a message sent between actors.
  - A message is constructed with a string ID paired with either:
@@ -184,7 +184,7 @@ Contains the structure of a message sent between actors.
     }
 
 
-# ActoreReference.java (interface)
+## ActoreReference.java (interface)
 A simple file that contains a single method. This allows actors to send messages to each other regardless of subtype
 
 ### Functions
@@ -194,4 +194,30 @@ A simple file that contains a single method. This allows actors to send messages
      void tell(Message message);
  }
  
+
+## ActorTestSuite.java
+This is the testing file for all actors and actor subtypes
+
+## Tests
+### addValues()
+ - Creates two messages and checks that:
+ - Integer values are used directly
+ - Strings contribute their .length()
+ - Mixed types add correctly
+
+### NumericIncrementActor
+ - Actor thread is started
+ - A message containing an integer value is sent
+ - A callback actor is created to print results
+
+ ### StringIdSwitchActor
+ - Actor thread is started
+ - A message containing a string ID and a string value is sent
+ - A callback actor is created to print results
+
+### ActorCreateActor
+ - Actor thread is started
+ - Sends a "create" message with an integer value of 3
+ - The actor creates 3 new actors with random types
+ - The test sends each newly created actor an appropriate test message (either "inc" or "swap")
 

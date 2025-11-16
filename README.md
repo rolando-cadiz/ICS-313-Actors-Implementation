@@ -47,6 +47,7 @@ This is the base class for all actor subtypes.
         }
     }
 
+
     public Message searchMessage(String ID) {
           for (Message msg : recieved) {
               if (msg.getID().equals(ID)) {
@@ -56,6 +57,7 @@ This is the base class for all actor subtypes.
           System.out.println("Message with ID " + ID + " not found.");
           return null;
       }
+
 
     public int addValues(Message msg1, Message msg2) {
       int a, b;

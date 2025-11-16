@@ -205,6 +205,10 @@ This is the testing file for all actors and actor subtypes
  - Strings contribute their .length()
  - Mixed types add correctly
 
+### searchMessage()
+ - Sends a dummy actor two messages used in the addValues() test via the tell() method
+ - prints the values of the messages
+
 ### NumericIncrementActor
  - Actor thread is started
  - A message containing an integer value is sent

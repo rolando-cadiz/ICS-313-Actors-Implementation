@@ -23,6 +23,11 @@ This is the base class for all actor subtypes.
  - An actor starts with start() and terminates with stop().
  - Each actor, no matter its subtype, can search for a message it has previously received using searchMessage().
  - Each actor, no matter its subtype, can add two message values (a + b) using addValues(). If the message value is numeric, the operand will be considered a primitive integer value. If the message value is a string, the operand will be considered the value of the string length
+### Fields
+
+    private BlockingQueue<Message> recieved = new LinkedBlockingQueue<>();
+    private volatile boolean running = false;
+    private Thread thread;
 
 ### Functions
 

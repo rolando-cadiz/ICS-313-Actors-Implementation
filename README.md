@@ -153,4 +153,12 @@ A subtype of an Actor
             }
         }
 
-        
+# Message.java
+
+Contains the structure of a message sent between actors.
+ - A message is constructed with string ID paired with either:
+   - An integer value
+   - A string value
+   - An Object along with a reference to another actor 
+ 
+

@@ -84,3 +84,20 @@ This is the base class for all actor subtypes.
   
       return a + b;
   }
+
+## NumericIncrementActor
+A subtype of an Actor
+ - Takes a message with a non-null and non-negative integer value and increments the value by one.
+ - Overrides the onMessage() function
+
+### Functions
+
+         @Override protected void onMessage(Message m) {
+            Integer intVal = m.getIntValue();
+            if ("inc".equals(m.getID()) && intVal != null) {
+                int incrementedVal = intVal + 1;              
+                String newID = "postInc";
+                if (m.getTo() != null) m.getTo().tell(new Message(newID, incrementedVal, null)); 
+            }
+        }
+ 

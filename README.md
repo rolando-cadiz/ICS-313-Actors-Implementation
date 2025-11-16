@@ -84,6 +84,7 @@ This is the base class for all actor subtypes.
   
       return a + b;
   }
+  
 
 ## NumericIncrementActor
 A subtype of an Actor
@@ -123,7 +124,7 @@ A subtype of an Actor
 
 ### Fields
 
-         private final Random rand = new Random();
+        private final Random rand = new Random();
         List<Actor> actors = new ArrayList<>();
 
 ### Functions
